@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS  # Import CORS
 import wikipedia as wk
 import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes and origins
 
 def get_section(text, section_title):
     """Extracts a section from Wikipedia text based on the section title."""
